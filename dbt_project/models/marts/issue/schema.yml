@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: fct_issue_distribution
+    description: >
+      Aggregated data on issue distribution over time, including counts of issues created, closed, and currently open, along with unique labels.
+    columns:
+      - name: created_date
+        description: "The date when issues were created."
+      - name: issues_created
+        description: "Number of issues created on the created_date."
+        tests:
+          - not_null
+      - name: issues_closed
+        description: "Number of issues closed on the created_date."
+        tests:
+          - not_null
+      - name: issues_open
+        description: "Number of issues open as of the created_date."
+        tests:
+          - not_null
+      - name: label_name
+        description: "labels associated with issues created on the created_date."

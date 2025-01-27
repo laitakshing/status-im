@@ -1,0 +1,37 @@
+# models/marts/finance/schema.yml
+
+version: 2
+
+models:
+  - name: fct_project_cost
+    description: >
+      Summarizes the total project cost over time in EUR, including a breakdown by department.
+    columns:
+      - name: month
+        description: "The month during which costs were incurred."
+        tests:
+          - not_null
+      - name: total_cost
+        description: "Total project cost for the month in EUR."
+        tests:
+          - not_null
+      - name: codex_cost
+        description: "Project cost attributed to the CODEX department for the month in EUR."
+        tests:
+          - not_null
+      - name: waku_cost
+        description: "Project cost attributed to the WAKU department for the month in EUR."
+        tests:
+          - not_null
+      - name: communication_cost
+        description: "Project cost attributed to the COMMUNICATION department for the month in EUR."
+        tests:
+          - not_null
+      - name: infra_cost
+        description: "Project cost attributed to the infra department for the month in EUR."
+        tests:
+          - not_null
+      - name: other_cost
+        description: "Project cost attributed to departments without a specified name for the month in EUR."
+        tests:
+          - not_null

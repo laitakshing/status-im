@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: fct_repository_activity
+    description: >
+      Tracks repository activities, including the number of commits, pull requests, and merged pull requests per repository per month.
+    columns:
+      - name: repository
+        description: "Name of the repository."
+        tests:
+          - not_null
+      - name: month
+        description: "The month during which activities were recorded."
+        tests:
+          - not_null
+      - name: total_commits
+        description: "Total number of commits in the repository for the month."
+        tests:
+          - not_null
+      - name: total_pull_requests
+        description: "Total number of pull requests created in the repository for the month."
+        tests:
+          - not_null
+      - name: merged_pull_requests
+        description: "Total number of pull requests that were merged in the repository for the month."
+        tests:
+          - not_null
