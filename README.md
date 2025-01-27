@@ -1,4 +1,8 @@
-
+## Key files to check
+1. dbt_proct/models (All dbt transformation sql)
+2. grafana/dashboards/dashboard.json (dashbaords that I created for 1. issue distribution 2. repo activities 3. project costs)
+3. docker-compose.yml ( Docker compose setup)
+4. postgres/init.sql (init script to load pre-downloaded data)
 
 ## Prerequisites
 
