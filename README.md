@@ -1,59 +1,63 @@
 
 
-**Instructions to Use the `README.md` File:**
+## Prerequisites
 
-1. **Copy the Markdown Content:**
+Before proceeding, ensure you have the following installed on your local machine:
+- **Docker**: [Download and Install](https://docs.docker.com/desktop/setup/install/mac-install/).
 
-   Select all the text within the code block above (including the triple backticks) and copy it.
-
-2. **Create a `README.md` File in Your Repository:**
-
-   - If you're using GitHub Desktop:
-     - Open your repository in GitHub Desktop.
-     - Use your preferred text editor to create a new file named `README.md` in the root directory of your project.
-   - If you're using the command line:
-     ```bash
-     cd path/to/your/dbt-project-grafana-dashboard
-     touch README.md
-     ```
-
-3. **Paste the Copied Content:**
-
-   Open `README.md` with a text editor (e.g., VS Code, Sublime Text) and paste the copied content.
-
-4. **Customize the Placeholder Text:**
-
-   - **Replace `your-username`:** Substitute `your-username` with your actual GitHub username in the clone URLs.
-   - **Update Email Address:** Change `[your-email@example.com](mailto:your-email@example.com)` to your actual contact email.
-   - **Adjust Repository Name:** Ensure the repository name (`dbt-project-grafana-dashboard`) matches your actual repository name.
-   - **Modify Any Other Placeholders:** Update any other placeholder text to accurately reflect your project's specifics.
-
-5. **Save and Commit the `README.md` File:**
-
-   - **Using GitHub Desktop:**
-     - After saving the file in your text editor, return to GitHub Desktop.
-     - You should see `README.md` listed under **Changes**.
-     - Add a commit message, e.g., "Add comprehensive README.md".
-     - Click **Commit to main**.
-     - Click **Push origin** to upload the commit to GitHub.
-   
-   - **Using Command Line:**
-     ```bash
-     git add README.md
-     git commit -m "Add comprehensive README.md"
-     git push origin main
-     ```
-
-6. **Verify on GitHub:**
-
-   Navigate to your GitHub repository in your web browser to ensure that the `README.md` is correctly displayed on the repository's main page.
+If you are not using Docker:
+- **Git**: [Download and install Git](https://git-scm.com/downloads).
+- **DBT (Data Build Tool)**: [Install DBT](https://docs.getdbt.com/docs/installation).
+- **PostgreSQL**: Running instance with access credentials.
+- **Grafana**: [Download and install Grafana](https://grafana.com/docs/grafana/latest/installation/).
+- **Python 3.7+**: Required for DBT.
 
 ---
 
-**Final Notes:**
+## Installation
 
-- **Keep the README Updated:** As your project evolves, ensure that the `README.md` reflects any changes or new features.
-- **Enhance Documentation:** Consider adding sections like "Troubleshooting," "FAQ," or "Contributing Guidelines" if applicable.
-- **Use Badges:** You can add badges (e.g., build status, license) at the top of the README for quick reference.
+### 1. Clone the Repository
 
-Feel free to reach out if you need further customization or have additional questions!
+Use GitHub Desktop or the command line to clone the repository to your local machine.
+
+**Using GitHub Desktop:**
+
+1. Open **GitHub Desktop**.
+2. Click on **File** > **Clone Repository**.
+3. In the **URL** tab, enter: https://github.com/your-username/dbt-project-grafana-dashboard.git
+4. Choose the local path where you want to clone the repository.
+5. Click **Clone**.
+
+**Using Command Line:**
+
+```bash
+git clone https://github.com/your-username/dbt-project-grafana-dashboard.git
+cd dbt-project-grafana-dashboard
+```
+Replace your-username with your actual GitHub username.
+
+### 2. Set Up all components
+
+## Usage
+
+* Deploy the container with `make run`
+* Shutdown the containers with `make down`
+* Build the dbt models with `make dbt-buidlt`
+* Compile the dbt models with `make dbt-compile`
+
+Once you clone the repo, please start the docker compose and check the log to see if all services are up and healthy
+
+<img width="330" alt="image" src="https://github.com/user-attachments/assets/146b6ea5-c77f-4cb3-97ea-bfb9a2d3ccf1" />
+
+
+I already download the data from recruitment.free.technology as CSV and include them into init.sql so the init setup will store the data into postgre
+
+### 3. Check the Grafana Dashboards
+
+1.	Open Grafana in Your Browser:
+Navigate to http://localhost:3000 (replace localhost with your server’s IP/domain if different) and login as admin/Password!
+
+2. Default Dashboard
+The default dashboard should be shown once dbt completed, the json is located at grafana/dahsboards/dahsboard.json
+![image](https://github.com/user-attachments/assets/37920c48-7423-4296-8826-c69a78a52815)
+
