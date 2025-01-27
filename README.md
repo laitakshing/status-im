@@ -1,57 +1,59 @@
-# BI Recruitment Task
+---
 
-This repo provide a set of preconfigured tools that can be used for the recruitment task for IFT:
+**Instructions to Use the `README.md` File:**
 
-* PostgreSQL database
-* DBT
-* Grafana
+1. **Copy the Markdown Content:**
 
-## Tasks
+   Select all the text within the code block above (including the triple backticks) and copy it.
 
-One goal of the BI team is to design and implement dashboards to help Projects Lead have an overview of their project.
-Those dashboards will be use for the progress reporting, evaluating the project adoption, and identify improvement.
+2. **Create a `README.md` File in Your Repository:**
 
-In the Database, you will find data extracted from one of our [Github Project](https://github.com/waku-org/) and wake financial data. With those, create some indicators concerning:
-* Issues distribution.
-* The activity on different repositories.
-* The Cost of the project.
+   - If you're using GitHub Desktop:
+     - Open your repository in GitHub Desktop.
+     - Use your preferred text editor to create a new file named `README.md` in the root directory of your project.
+   - If you're using the command line:
+     ```bash
+     cd path/to/your/dbt-project-grafana-dashboard
+     touch README.md
+     ```
 
-The github data are base on the project [Waku](https://github.com/waku-org/).
+3. **Paste the Copied Content:**
 
-The database configuration:
-* host: `recruitment.free.technology`
-* port: `5432`
-* user: will be provided
-* password: will be provided
-* database name: `recruitment_task`
-* schemas: `raw_github`,`raw_finance`
+   Open `README.md` with a text editor (e.g., VS Code, Sublime Text) and paste the copied content.
 
-This repository contains a preconfigured partial stack to let you focus on the data manipulation. However, you are free to use any free technology you like, on the condition we can easily reproduce the result.
+4. **Customize the Placeholder Text:**
 
+   - **Replace `your-username`:** Substitute `your-username` with your actual GitHub username in the clone URLs.
+   - **Update Email Address:** Change `[your-email@example.com](mailto:your-email@example.com)` to your actual contact email.
+   - **Adjust Repository Name:** Ensure the repository name (`dbt-project-grafana-dashboard`) matches your actual repository name.
+   - **Modify Any Other Placeholders:** Update any other placeholder text to accurately reflect your project's specifics.
 
-## Expectations
+5. **Save and Commit the `README.md` File:**
 
-We estimate the task you must spend on the task to be approximately 5 hours, we don't expect a full solution.
-Sending a partial solution with explanation on additional indicators, data transformation or technical part that could be added to the solution to have a complete solution is fine.
+   - **Using GitHub Desktop:**
+     - After saving the file in your text editor, return to GitHub Desktop.
+     - You should see `README.md` listed under **Changes**.
+     - Add a commit message, e.g., "Add comprehensive README.md".
+     - Click **Commit to main**.
+     - Click **Push origin** to upload the commit to GitHub.
+   
+   - **Using Command Line:**
+     ```bash
+     git add README.md
+     git commit -m "Add comprehensive README.md"
+     git push origin main
+     ```
 
-With this task, our goals are to:
-* Understand your approach to a real problem.
-* Evaluate some keys skills (Data transformation, graphs creation).
+6. **Verify on GitHub:**
 
-It is recommended to submit the tasks result as a git repository containing all the files to reproduce the result.
+   Navigate to your GitHub repository in your web browser to ensure that the `README.md` is correctly displayed on the repository's main page.
 
-> If you are using this repository, we recommend that you export the grafana dashboard and add it with the DBT models to the git history.
+---
 
+**Final Notes:**
 
-## Requirements
+- **Keep the README Updated:** As your project evolves, ensure that the `README.md` reflects any changes or new features.
+- **Enhance Documentation:** Consider adding sections like "Troubleshooting," "FAQ," or "Contributing Guidelines" if applicable.
+- **Use Badges:** You can add badges (e.g., build status, license) at the top of the README for quick reference.
 
-* Have docker installed
-
-## Usage
-
-* Deploy the container with `make run`
-* Shutdown the containers with `make down`
-* Build the dbt models with `make dbt-buidlt`
-* Compile the dbt models with `make dbt-compile`
-
-The data from the database and grafana are persisted with docker volumes.
+Feel free to reach out if you need further customization or have additional questions!
